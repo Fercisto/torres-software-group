@@ -51,7 +51,7 @@ export default function Header() {
           <li className="w-full md:w-auto mt-2 md:mt-0 md:ml-4">
             <a
               href="#contacto"
-              className="block text-center px-5 py-2 rounded-xl bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors"
+              className="block text-center px-5 py-2 rounded-2xl bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors"
               onClick={() => setMenu(false)}
             >
               Comenzar
