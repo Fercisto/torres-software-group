@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
-      <nav className="mx-auto flex flex-col items-center md:flex-row max-w-7xl px-6 py-4">
+      <nav className="flex flex-col items-center md:flex-row py-4">
 
         <div className="flex items-center justify-between w-full">
           <Logo />
