@@ -1,15 +1,28 @@
 import { LuMail, LuArrowRight } from 'react-icons/lu';
+import { motion } from 'framer-motion';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 export default function Contact() {
   return (
     <div className="mx-auto max-w-7xl py-8 space-y-5">
 
-      <div className="max-w-xl mx-auto space-y-3">
+      <motion.div
+        className="max-w-xl mx-auto space-y-3"
+        initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+      >
         <h2 className="text-black text-center font-bold text-4xl md:text-6xl">Hablemos</h2>
         <p className="text-gray-500 text-center text-sm md:text-lg">Cuéntanos tu idea y te respondemos a la brevedad</p>
-      </div>
+      </motion.div>
 
-      <div className="max-w-2xl mx-auto">
+      <motion.div
+        className="max-w-2xl mx-auto"
+        initial="hidden" whileInView="visible" viewport={{ once: true }}
+        variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.15 } } }}
+      >
         <form className="bg-gray-50 border border-gray-200 rounded-2xl p-8 space-y-5">
 
           <div className="grid md:grid-cols-2 gap-5">
@@ -52,7 +65,7 @@ export default function Contact() {
           </button>
 
         </form>
-      </div>
+      </motion.div>
 
     </div>
   );
