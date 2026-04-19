@@ -16,11 +16,11 @@ export default function Build() {
             </h3>
 
             <div className="flex items-center justify-between gap-x-3">
-                <Link className='bg-indigo-600 hover:bg-indigo-500 transition-colors text-white rounded-3xl px-8 py-4 text-base flex items-center justify-between'>
+                <Link className='bg-indigo-600 hover:bg-indigo-500 transition-colors text-white rounded-3xl px-8 py-4 text-base flex items-center justify-between gap-1'>
                     <span>Iniciar proyecto</span>
                     <LuArrowRight size={22} />
                 </Link>
-                <Link className='bg-transparent border border-white rounded-3xl px-8 py-4 text-white flex items-start justify-between'>
+                <Link className='bg-transparent border border-white rounded-3xl px-8 py-4 text-white flex items-start justify-between gap-1'>
                     <LuMail size={22} />
                     <span>Contactar el equipo</span>
                 </Link>
