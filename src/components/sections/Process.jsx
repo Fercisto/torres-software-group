@@ -30,9 +30,9 @@ const services = [
 
 export default function Process() {
   return (
-    <div className="mx-auto max-w-7xl py-8 space-y-16 mb-10">
+    <div className="mx-auto max-w-7xl py-8 space-y-5">
 
-      <div className="max-w-lg mx-auto space-y-3 gap-y-6 flex flex-col items-center justify-center">
+      <div className="max-w-xl mx-auto space-y-3">
         <h2 className="text-white text-center font-bold text-4xl md:text-6xl">Nuestro Proceso</h2>
         <p className="text-gray-300 text-center text-sm md:text-lg">Un enfoque estructurado y probado para transformar tus ideas en realidad</p>
       </div>
@@ -55,9 +55,9 @@ export default function Process() {
         ))}
       </div>
 
-      <div className='flex items-center justify-center'>
-        <Link to="/contacto" className="bg-white text-black font-semibold px-8 py-3 text-base rounded-full">                                                                                                                            
-            Comencemos a trabajar juntos                                     
+      <div className='flex items-center justify-center pt-5'>
+        <Link to="/contacto" className="bg-white text-black font-semibold px-8 py-3 text-base rounded-full">
+          Comencemos a trabajar juntos
         </Link>
       </div>
 
