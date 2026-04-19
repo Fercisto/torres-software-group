@@ -13,25 +13,30 @@ function App() {
     <div>
       
       <Header />
-      <Hero />
 
-      <section className='relative bg-black overflow-hidden p-5'>
+      <section id="inicio">
+        <Hero />
+      </section>
+
+      <section id="servicios" className='relative bg-black overflow-hidden p-5'>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-indigo-600/20 rounded-full blur-[120px]" />
         </div>
         <Services />
       </section>
 
-      <Info />
+      <section id="soluciones">
+        <Info />
+      </section>
 
-      <section className='relative bg-black overflow-hidden p-5'>
+      <section id="proyectos" className='relative bg-black overflow-hidden p-5'>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-indigo-600/20 rounded-full blur-[120px]" />
         </div>
         <Process />
       </section>
 
-      <section className='bg-white p-5'>
+      <section id="contacto" className='bg-white p-5'>
         <Contact />
       </section>
 
