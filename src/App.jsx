@@ -1,6 +1,7 @@
 import './App.css'
 import Header from './components/layout/Header'
 import Build from './components/sections/Build'
+import Contact from './components/sections/Contact'
 import Hero from './components/sections/Hero'
 import Info from './components/sections/Info'
 import Process from './components/sections/Process'
@@ -30,7 +31,13 @@ function App() {
         <Process />
       </section>
 
-      <Build/>
+      <section className='bg-white p-5'>
+        <Contact />
+      </section>
+
+      <section className='bg-black p-5'>
+        <Build/>
+      </section>
 
     </div>
   )
