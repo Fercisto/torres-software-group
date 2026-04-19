@@ -1,4 +1,4 @@
-import { LuMail, LuArrowRight } from 'react-icons/lu';
+import { LuMail, LuArrowRight, LuPhone } from 'react-icons/lu';
 import { motion } from 'framer-motion';
 
 const fadeUp = {
@@ -44,6 +44,18 @@ export default function Contact() {
                   className="w-full bg-white border border-gray-300 rounded-xl pl-10 pr-4 py-3 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500 transition-colors"
                 />
               </div>
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm text-gray-600">Teléfono <span className="text-gray-600">(opcional)</span></label>
+            <div className="relative">
+              <LuPhone size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600" />
+              <input
+                type="tel"
+                placeholder="+52 000 000 0000"
+                className="w-full bg-white border border-gray-300 rounded-xl pl-10 pr-4 py-3 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500 transition-colors"
+              />
             </div>
           </div>
 
