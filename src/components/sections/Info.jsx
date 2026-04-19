@@ -32,15 +32,15 @@ export default function Info() {
 
         <div className=" flex-1 flex flex-col items-center justify-between gap-y-8 bg-transparent">
 
-            <h1 className="text-black text-3xl md:text-7xl font-bold flex-1 ">
+            <h1 className="text-black text-4xl md:text-6xl font-bold flex-1 ">
                 Innovación y Tecnología
             </h1>
 
             <div className="flex-1 flex flex-col items-center justify-between gap-y-2">
-              <p className="text-gray-600 text-base md:text-lg">
+              <p className="text-gray-600 text-sm md:text-lg">
                 En Torres Software Group, transformamos ideas en realidades digitales. Somos un equipo de expertos apasionados por la tecnología, dedicados a crear soluciones innovadoras que impulsan el crecimiento de nuestros clientes.
               </p>
-              <p className="text-gray-600 text-base md:text-lg">
+              <p className="text-gray-600 text-sm md:text-lg">
                 Desde nuestra sede en Durango, México, servimos a clientes nacionales e internacionales, ofreciendo desarrollo web de última generación, aplicaciones móviles intuitivas y software de escritorio robusto.
               </p>
             </div>
@@ -52,8 +52,8 @@ export default function Info() {
                     <Icon size={32} className="text-black" />
                   </div>
                   <div className="basis-5/6">
-                    <h4 className="text-xl font-bold">{title}</h4>
-                    <p className="md:text-lg text-gray-500 md:text-nowrap text-sm text-wrap">{description}</p>
+                    <h4 className="text-lg font-bold">{title}</h4>
+                    <p className="text-sm text-gray-500 md:text-nowrap text-wrap">{description}</p>
                   </div>
                 </div>
               ))}

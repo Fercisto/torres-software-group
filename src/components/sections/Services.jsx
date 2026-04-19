@@ -28,8 +28,8 @@ export default function Services() {
     <div className="mx-auto max-w-7xl py-8 space-y-5">
 
       <div className="max-w-lg mx-auto space-y-3">
-        <h2 className="text-white text-center font-bold text-4xl">Nuestros Servicios</h2>
-        <p className="text-gray-300 text-center">Ofrecemos soluciones tecnológicas integrales para llevar tu negocio al siguiente nivel</p>
+        <h2 className="text-white text-center font-bold text-4xl md:text-6xl">Nuestros Servicios</h2>
+        <p className="text-gray-300 text-center text-sm md:text-lg">Ofrecemos soluciones tecnológicas integrales para llevar tu negocio al siguiente nivel</p>
       </div>
 
       <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5 pt-5">
