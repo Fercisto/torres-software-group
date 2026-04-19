@@ -16,7 +16,7 @@ export default function Build() {
             </h3>
 
             <div className="flex items-center justify-between gap-x-3">
-                <Link className='bg-white text-black rounded-3xl px-8 py-4 text-base flex items-center justify-between'>
+                <Link className='bg-indigo-600 hover:bg-indigo-500 transition-colors text-white rounded-3xl px-8 py-4 text-base flex items-center justify-between'>
                     <span>Iniciar proyecto</span>
                     <LuArrowRight size={22} />
                 </Link>

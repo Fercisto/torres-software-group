@@ -56,7 +56,7 @@ export default function Process() {
       </div>
 
       <div className='flex items-center justify-center pt-5'>
-        <Link to="/contacto" className="bg-white text-black font-semibold px-8 py-3 text-base rounded-full">
+        <Link to="/contacto" className="bg-indigo-600 hover:bg-indigo-500 transition-colors text-white font-semibold px-8 py-3 text-base rounded-full">
           Comencemos a trabajar juntos
         </Link>
       </div>

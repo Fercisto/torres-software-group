@@ -9,7 +9,7 @@ export default function Hero() {
                 Especialistas en desarrollo web, aplicaciones móviles y software de escritorio. Transformamos ideas en soluciones tecnológicas innovadoras.
             </p>
             <div className="flex flex-col md:flex-row text-center gap-4">
-                <a href="#contacto" className="bg-black text-white px-8 py-3 rounded-full inline-block transition-transform md:hover:scale-105">Iniciar Tu Proyecto</a>
+                <a href="#contacto" className="bg-indigo-600 hover:bg-indigo-500 transition-transform text-white px-8 py-3 rounded-full inline-block md:hover:scale-105">Iniciar Tu Proyecto</a>
                 <a href="#servicios" className="border border-black text-black px-8 py-3 rounded-full inline-block transition-transform md:hover:scale-105">Ver Servicios</a>
             </div>
         </div>
