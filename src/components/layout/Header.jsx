@@ -15,8 +15,8 @@ export default function Header() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <header className="mx-auto max-w-7xl px-4 md:px-8 sticky top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
-      <nav className="flex flex-col items-center md:flex-row py-4">
+    <header className="sticky top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+      <nav className="mx-auto max-w-7xl px-4 md:px-8 flex flex-col items-center md:flex-row py-4">
 
         <div className="flex items-center justify-between w-full">
           <Logo />
