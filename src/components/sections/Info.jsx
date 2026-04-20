@@ -25,9 +25,9 @@ export default function Info() {
   }, []);
 
   return (
-    <main className="mx-auto max-w-7xl px-4 md:px-8 flex flex-col md:flex-row items-center md:gap-12 gap-y-12 py-5 md:py-16">
-      <div className="flex-1 flex flex-col items-center justify-center bg-transparent gap-8">
-        <div className="relative w-full">
+    <main className="mx-auto max-w-7xl px-4 md:px-8 flex flex-col md:flex-row items-center md:gap-8 gap-y-12 py-5 md:py-16">
+      <div className="md:flex-[1.2] flex flex-col items-center justify-center bg-transparent gap-8">
+        <div className="relative w-full pb-8 pr-6">
           <div className="relative overflow-hidden rounded-3xl aspect-[3/2] w-full">
             {images.map((img, i) => (
               <motion.picture
@@ -47,13 +47,13 @@ export default function Info() {
             ))}
           </div>
 
-          <div className="bg-white rounded-xl absolute -right-4 -bottom-4 flex items-start gap-x-2 px-4 py-2 shadow-lg">
+          <div className="bg-indigo-600 rounded-xl absolute right-0 -bottom-2 flex items-start gap-x-2 px-4 py-2 shadow-lg shadow-indigo-200">
             <div className="flex items-center justify-center p-3">
-              <LuMapPin size={32} className="text-black" />
+              <LuMapPin size={32} className="text-white" />
             </div>
             <div className="flex flex-col gap-y-1">
-              <h4 className="text-lg font-bold text-nowrap">Durango, México</h4>
-              <p className="text-sm text-gray-500 text-nowrap">Sede Principal</p>
+              <h4 className="text-lg font-bold text-nowrap text-white">Durango, México</h4>
+              <p className="text-sm text-indigo-200 text-nowrap">Sede Principal</p>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function Info() {
 
       <div className="flex-1 flex flex-col items-center justify-between gap-y-8 bg-transparent">
         <h1 className="text-black text-4xl md:text-6xl font-bold flex-1">
-          Innovación y Tecnología
+          Innovación y <span className="text-indigo-600">Tecnología</span>
         </h1>
 
         <div className="flex-1 flex flex-col items-center justify-between gap-y-2">
@@ -75,9 +75,9 @@ export default function Info() {
 
         <div className="w-full flex flex-col items-center justify-between gap-y-5 mx-2">
           {values.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="flex-1 w-full flex items-center justify-between gap-x-8 bg-[#F7F7F7] rounded-xl border border-[#DEDEDE] px-6 py-2 inset-shadow-xl">
-              <div className="basis-1/6 p-4 w-full h-full bg-[#DDDDDD] flex items-center justify-center rounded-lg">
-                <Icon size={32} className="text-black" />
+            <div key={title} className="flex-1 w-full flex items-center justify-between gap-x-8 bg-indigo-50 rounded-xl border border-indigo-100 px-6 py-2">
+              <div className="basis-1/6 p-4 w-full h-full bg-indigo-100 flex items-center justify-center rounded-lg">
+                <Icon size={32} className="text-indigo-600" />
               </div>
               <div className="basis-5/6">
                 <h4 className="text-lg font-bold">{title}</h4>
