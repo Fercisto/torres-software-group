@@ -1,5 +1,6 @@
 import './App.css'
 import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
 import Build from './components/sections/Build'
 import Contact from './components/sections/Contact'
 import Hero from './components/sections/Hero'
@@ -43,6 +44,8 @@ function App() {
       <section className='bg-black p-5'>
         <Build/>
       </section>
+
+      <Footer />
 
     </div>
   )
