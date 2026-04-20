@@ -174,6 +174,13 @@ export default function Contact() {
             <span>{isSending ? 'Enviando...' : 'Enviar mensaje'}</span>
             <LuArrowRight size={18} />
           </button>
+
+          <p className="text-xs text-gray-400 text-center">
+            Protegido por reCAPTCHA de Google —{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer" className="underline hover:text-gray-600">Privacidad</a>
+            {' '}y{' '}
+            <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer" className="underline hover:text-gray-600">Términos</a>
+          </p>
         </form>
       </Motion.div>
     </div>
