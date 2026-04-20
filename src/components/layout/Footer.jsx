@@ -64,7 +64,7 @@ export default function Footer() {
           </p>
           <a
             href="#contacto"
-            className="inline-block bg-indigo-600 hover:bg-indigo-500 transition-colors text-white text-sm font-medium px-6 py-2.5 rounded-full"
+            className="inline-block w-fit bg-indigo-600 hover:bg-indigo-500 transition-colors text-white text-sm font-medium px-6 py-2.5 rounded-full"
           >
             Iniciar proyecto
           </a>
