@@ -1,4 +1,4 @@
-import { LuArrowRight } from 'react-icons/lu'
+import { LuArrowRight, LuChevronDown } from 'react-icons/lu'
 import { motion } from 'framer-motion'
 import { useEffect, useState, useRef } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
@@ -121,6 +121,21 @@ export default function Hero() {
           </div>
         </motion.div>
       </main>
+
+      <motion.a
+        href="#servicios"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-400 hover:text-indigo-600 transition-colors"
+        initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
+      >
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.4, ease: 'easeInOut' }}
+        >
+          <LuChevronDown size={22} />
+        </motion.div>
+      </motion.a>
     </div>
   )
 }
