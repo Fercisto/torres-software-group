@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+      <header id="main-header" className="sticky top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
         <nav className="mx-auto max-w-7xl px-4 md:px-8 flex items-center py-4">
 
           <Logo />
