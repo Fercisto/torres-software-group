@@ -1,5 +1,4 @@
 import { LuLightbulb, LuPalette, LuCodeXml, LuRocket } from 'react-icons/lu';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const services = [
@@ -71,15 +70,6 @@ export default function Process() {
             <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
           </motion.div>
         ))}
-      </motion.div>
-
-      <motion.div
-        className='flex items-center justify-center pt-5'
-        initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-      >
-        <Link to="/contacto" className="bg-indigo-600 hover:bg-indigo-500 transition-colors text-white font-semibold px-8 py-3 text-base rounded-full">
-          Comencemos a trabajar juntos
-        </Link>
       </motion.div>
 
     </div>
