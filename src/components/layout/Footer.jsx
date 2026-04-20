@@ -1,4 +1,5 @@
 import { LuMail, LuMapPin } from 'react-icons/lu'
+import Logo from '../ui/Logo'
 
 const navLinks = [
   { href: '#inicio',    label: 'Inicio' },
@@ -15,7 +16,7 @@ export default function Footer() {
 
         {/* Brand */}
         <div className="flex flex-col gap-4 flex-1">
-          <a href="#inicio" className="font-bold text-xl hover:text-indigo-600 transition-colors">Torres Software Group</a>
+          <Logo />
           <p className="text-sm text-gray-500 max-w-xs leading-relaxed">
             Transformamos ideas en soluciones tecnológicas innovadoras desde Durango, México.
           </p>
