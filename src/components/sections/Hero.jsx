@@ -64,16 +64,17 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full"
       />}
 
-      <main className="relative w-full mx-auto max-w-7xl px-4 md:px-8 flex items-center gap-12 py-12 md:py-20">
+      <main className="relative w-full mx-auto max-w-7xl px-4 md:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-12 py-12 md:py-20">
         {/* Text column */}
-        <div className="flex-1 flex flex-col gap-7">
+        <div className="flex-1 flex flex-col gap-7 items-center md:items-start text-center md:text-left">
           <motion.h1
             className="text-black text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
             initial="hidden" animate="visible" custom={0.1} variants={fadeUp}
           >
-            Construyendo{' '}
-            <span className="text-indigo-600">Soluciones</span>{' '}
-            Digitales Que Escalan
+            <span className="block sm:inline">Construyendo</span>{' '}
+            <span className="block sm:inline text-indigo-600">Soluciones</span>{' '}
+            <span className="block sm:inline">Digitales</span>{' '}
+            <span className="block sm:inline">Que Escalan</span>
           </motion.h1>
 
           <motion.p
@@ -84,7 +85,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col md:flex-row text-center gap-4 pt-2"
+            className="flex flex-col md:flex-row text-center gap-4 pt-2 w-full md:w-auto"
             initial="hidden" animate="visible" custom={0.3} variants={fadeUp}
           >
             <a href="#contacto" className="bg-indigo-600 hover:bg-indigo-500 transition-all text-white px-8 py-3.5 rounded-full inline-flex items-center justify-center gap-x-2 md:hover:scale-105 shadow-lg shadow-indigo-200">
@@ -114,7 +115,7 @@ export default function Hero() {
               <img
                 src="/images/hero-image.png"
                 alt="Desarrollador trabajando"
-                className="relative w-full h-auto max-h-[700px] object-contain drop-shadow-2xl"
+                className="relative w-full h-auto max-h-[280px] md:max-h-[700px] object-contain drop-shadow-2xl"
               />
             </picture>
           </div>
