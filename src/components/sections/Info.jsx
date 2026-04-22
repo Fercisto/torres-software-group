@@ -1,6 +1,21 @@
 import { LuAward, LuUsers, LuTrendingUp, LuMapPin } from "react-icons/lu";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+
+
+function FadeUp({ as: Tag = "div", className, children }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 95%", "end 10%"] });
+  const opacity = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
+  const y      = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [50, 0, 0, -20]);
+  const scale  = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0.97, 1, 1, 0.97]);
+  const MotionTag = motion[Tag];
+  return (
+    <MotionTag ref={ref} className={className} style={{ opacity, y, scale }}>
+      {children}
+    </MotionTag>
+  );
+}
 
 const values = [
   { icon: LuAward,      title: "Excelencia",    description: "Compromiso con la calidad en cada proyecto" },
@@ -14,11 +29,34 @@ const images = [
   { avif: "/images/durango3.avif", webp: "/images/durango3.webp", jpg: "/images/durango3.jpg" },
 ];
 
+const carouselTransitions = [
+  {
+    initial: { clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)", scale: 1.05 },
+    animate: { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", scale: 1 },
+    exit:    { clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)", scale: 1.05 },
+    transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1] },
+  },
+  {
+    initial: { opacity: 0, scale: 1.08, filter: "blur(14px)" },
+    animate: { opacity: 1, scale: 1,    filter: "blur(0px)" },
+    exit:    { opacity: 0, scale: 1.08, filter: "blur(14px)" },
+    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+  {
+    initial: { opacity: 0, x: 80 },
+    animate: { opacity: 1, x: 0 },
+    exit:    { opacity: 0, x: -80 },
+    transition: { duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+];
+
 export default function Info() {
   const [current, setCurrent] = useState(0);
+  const [transitionIndex, setTransitionIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
+      setTransitionIndex(prev => (prev + 1) % carouselTransitions.length);
       setCurrent(prev => (prev + 1) % images.length);
     }, 10000);
     return () => clearInterval(interval);
@@ -26,25 +64,27 @@ export default function Info() {
 
   return (
     <main className="mx-auto max-w-7xl px-4 md:px-8 flex flex-col md:flex-row items-center md:gap-8 gap-y-12 py-5 md:py-16">
-      <div className="w-full md:flex-[1.2] flex flex-col items-center justify-center bg-transparent gap-8">
+      <FadeUp className="w-full md:flex-[1.2] flex flex-col items-center justify-center bg-transparent gap-8">
         <div className="relative w-full mb-3">
           <div className="relative overflow-hidden rounded-3xl aspect-[3/2] w-full">
-            {images.map((img, i) => (
+            <AnimatePresence mode="wait">
               <motion.picture
-                key={i}
-                animate={{ opacity: i === current ? 1 : 0 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
+                key={current}
+                initial={carouselTransitions[transitionIndex].initial}
+                animate={carouselTransitions[transitionIndex].animate}
+                exit={carouselTransitions[transitionIndex].exit}
+                transition={carouselTransitions[transitionIndex].transition}
                 className="absolute inset-0 w-full h-full"
               >
-                <source srcSet={img.avif} type="image/avif" />
-                <source srcSet={img.webp} type="image/webp" />
+                <source srcSet={images[current].avif} type="image/avif" />
+                <source srcSet={images[current].webp} type="image/webp" />
                 <img
-                  src={img.jpg}
-                  alt={`Durango, México ${i + 1}`}
+                  src={images[current].jpg}
+                  alt={`Durango, México ${current + 1}`}
                   className="w-full h-full object-cover"
                 />
               </motion.picture>
-            ))}
+            </AnimatePresence>
           </div>
 
           <div className="flex bg-indigo-600 rounded-xl absolute right-4 -bottom-6 items-start gap-x-2 px-4 py-2 shadow-lg shadow-indigo-200 w-fit">
@@ -57,25 +97,28 @@ export default function Info() {
             </div>
           </div>
         </div>
-      </div>
+      </FadeUp>
 
       <div className="w-full flex-1 flex flex-col items-center justify-between gap-y-8 bg-transparent">
-        <h1 className="text-black text-4xl md:text-6xl font-bold flex-1 text-center md:text-left w-full">
+        <FadeUp as="h1" className="text-black text-4xl md:text-6xl font-bold flex-1 text-center md:text-left w-full">
           Innovación y <span className="text-indigo-600">Tecnología</span>
-        </h1>
+        </FadeUp>
 
-        <div className="flex-1 flex flex-col items-center justify-between gap-y-2 text-center md:text-left">
+        <FadeUp className="flex-1 flex flex-col items-center justify-between gap-y-2 text-center md:text-left">
           <p className="text-gray-600 text-sm md:text-lg">
             En Torres Software Group, transformamos ideas en realidades digitales. Somos un equipo de expertos apasionados por la tecnología, dedicados a crear soluciones innovadoras que impulsan el crecimiento de nuestros clientes.
           </p>
           <p className="text-gray-600 text-sm md:text-lg">
             Desde nuestra sede en Durango, México, servimos a clientes nacionales e internacionales, ofreciendo desarrollo web de última generación, aplicaciones móviles intuitivas y software de escritorio robusto.
           </p>
-        </div>
+        </FadeUp>
 
         <div className="w-full flex flex-col items-center justify-between gap-y-5 mx-2">
-          {values.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="flex-1 w-full flex items-center justify-between gap-x-8 bg-indigo-50 rounded-xl border border-indigo-100 px-6 py-2">
+          {values.map(({ icon: Icon, title, description }, index) => (
+            <FadeUp
+              key={title}
+              className="flex-1 w-full flex items-center justify-between gap-x-8 bg-indigo-50 rounded-xl border border-indigo-100 px-6 py-2"
+                         >
               <div className="basis-1/6 p-4 w-full h-full bg-indigo-100 flex items-center justify-center rounded-lg">
                 <Icon size={32} className="text-indigo-600" />
               </div>
@@ -83,7 +126,7 @@ export default function Info() {
                 <h4 className="text-lg font-bold">{title}</h4>
                 <p className="text-sm text-gray-500 md:text-nowrap text-wrap">{description}</p>
               </div>
-            </div>
+            </FadeUp>
           ))}
         </div>
       </div>
